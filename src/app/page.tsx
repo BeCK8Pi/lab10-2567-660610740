@@ -11,7 +11,7 @@ export default function RandomUserPage() {
   const [users, setUsers] = useState<UserCardProps[]>([]);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [genAmount, setGenAmount] = useState(1);
+  const [genAmount, setGenAmount] = useState("1");
 
   const generateBtnOnClick = async () => {
     setIsLoading(true);
