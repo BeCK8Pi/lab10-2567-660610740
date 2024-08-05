@@ -11,7 +11,7 @@ export default function RandomUserPage() {
   const [users, setUsers] = useState<UserCardProps[]>([]);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [genAmount, setGenAmount] = useState<number>();
+  const [genAmount, setGenAmount] = useState(1);
 
   const generateBtnOnClick = async () => {
     setIsLoading(true);
@@ -66,7 +66,7 @@ export default function RandomUserPage() {
       {isLoading && (
         <p className="display-6 text-center fst-italic my-4">Loading ...</p>
       )}
-      {users && !isLoading && users.map((x)=><UserCard name={x.name} imgUrl={x.imgUrl} address={x.address} email={x.email}/>)}
+      {users && !isLoading && users.map((x)=><UserCard key={x.name} name={x.name} imgUrl={x.imgUrl} address={x.address} email={x.email}/>)}
     </div>
   );
 }
